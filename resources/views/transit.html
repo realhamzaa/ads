@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الرئيسية</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.rtl.min.css">
+    <style>
+        @font-face {
+            font-family: 'IOSFont';
+            src: url(fonts/IOS\ 15\ R\ SemiBold.ttf) format('truetype');
+        }
+
+
+        body {
+            background-color: #f8f9fa;
+            font-family: 'IOSFont';
+        }
+
+        .card {
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.03s);
+        }
+
+        .card-icon {
+            font-size: 40px;
+            color: #c00;
+
+        }
+
+        .card-title a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .card-title a:hover {
+            color: #b30000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container py-5">
+        <h2 class="text-center mb-5 text-danger">نظام إدارة بيانات الأشخاص - الهلال الأحمر</h2>
+        <!-- Setting box -->
+        <div class="row g-4">
+            <div class="col-md-4 card text-center shadow-sm">
+                <div class="card-body">
+                    <div class="card-icon mb-3">🔧</div>
+                </div>
+                <h5 class="card-title "><a href="">الإعدادات</a></h5>
+                <p class="card-text">
+                    رفع ملف , إدخال مخزون , تصدير بيانات
+                </p>
+            </div>
+        <!-- Data show Box  -->
+        <!-- <div class="col-md-4">
+            <div class="card text-center shadow-sm p-4">
+                <div class="card-icon mb-3">🔧</div>
+                <h5 class="card-title"><a href="">الإعدادات</a></h5>
+
+            </div>
+        </div> -->
+        <!-- Data show Box  -->
+        <div class="col-md-4">
+            <div class="card text-center shadow-sm p-4">
+                <div class="card-icon mb-3">📊</div>
+                <h5 class="card-title"><a href="">عرض البيانات</a></h5>
+
+            </div>
+        </div>
+        <!-- مربع الاستعلام    -->
+        <div class="col-md-4">
+            <div class="card text-center shadow-sm p-4">
+                <div class="card-icon mb-3">🔑</div>
+                <h5 class="card-title"><a href="search.html">الاستعلام</a></h5>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
