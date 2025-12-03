@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('beneficiaries', function (Blueprint $table) {
             $table->id();
-            $table->string('firstName')->nullable();
+            $table->string('fullName')->nullable();
             $table->integer('idNumber')->nullable();
             $table->integer('phone')->nullable();
             $table->string('address')->nullable();
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('beneficiaries_new');
+        Schema::dropIfExists('beneficiaries');
     }
 };

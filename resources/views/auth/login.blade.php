@@ -52,13 +52,25 @@
     <form method="POST" action="{{ route('login') }}">
         @csrf
         @method('POST')
+
+        
         <div class="mb3 text-start">
             <label for="username" class="form-label">اسم المستخدم</label>
-            <input type="text" class="form-control" name="email" id="email" required autofocus>
+            <input type="text" class="form-control @error('username') is-invalid 
+            @enderror " name="email" id="email" autofocus>
+            @error('username')
+                <small class="invalid-feedback">{{ $message }}</small>
+            @enderror
         </div>
+
+
         <div class="mb-3 text-start">
             <label for="password" class="form-label">كلمة المرور</label>
-            <input type="password" name="password" id="password" class="form-control" required>
+            <input type="password" name="password" id="password"
+                class="form-control @error('password') is-invalid @enderror">
+            @error('password')
+                <small class="invalid-feedback">{{ $message }}</small>
+            @enderror
         </div>
         <button type="submit" class="btn btn-danger w-100">تسجيل الدخول</button>
     </form>

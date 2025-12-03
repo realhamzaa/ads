@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>تسجيل مستخدم جديد</title>
+    <title>Laravel</title>
 
     <!-- Fonts -->
-    {{-- <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" /> --}}
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
 
     <!-- Styles / Scripts -->
     <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.rtl.min.css') }}">
@@ -71,89 +71,37 @@
     @endif
     @endauth --}}
     <img src="" alt="">
-    {{-- Global Error --}}
-    {{-- @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-
-    @endif --}}
     <h4>نموذج إرسال طلب تسجيل حساب مستخدم</h4>
-    <div>
-        <h3>
-
-        </h3>
-    </div>
     <form method="POST" action="{{ route('register') }}">
         @csrf
         @method('POST')
-
-        {{-- name  --}}
         <div class="mb3 text-start">
             <label for="name" class="form-label">الإسم</label>
-            <input type="text" class="form-control @error('name') is-invalid @enderror" name=" name" id="name"
-                value="{{ old('name') }}"  autofocus>
-            @error('name')
-                <small class="invalid-feedback">{{ $message }}</small>
-            @enderror
+            <input type="text" class="form-control" name="name" id="name" required autofocus>
         </div>
-
-        {{-- username --}}
         <div class="mb3 text-start">
             <label for="username" class="form-label">اسم المستخدم</label>
-            <input type="text" class="form-control @error('name') is-invalid @enderror" name=" username" id="username"
-                value="{{ old('username') }}"  autofocus>
-            @error('username')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
+            <input type="text" class="form-control" name="username" id="username" required autofocus>
         </div>
-
-        {{-- email  --}}
         <div class="mb3 text-start">
             <label for="email" class="form-label">البريد الإلكتروني</label>
-            <input type="text" class="form-control @error('name') is-invalid @enderror" name="email" id="email"
-                value="{{ old('email') }}"  autofocus autocomplete="true">
-            @error('email')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
+            <input type="text" class="form-control" name="email" id="email" required autofocus>
         </div>
-
-        {{-- password    --}}
         <div class="mb-3 text-start">
             <label for="password" class="form-label">كلمة المرور</label>
-            <input type="password" name="password" id="password"
-                class="form-control @error('name') is-invalid @enderror"" >
-             @error('password')
-                    <div class=" invalid-feedback">{{ $message }}
-                </div>
-            @enderror
+            <input type="password" name="password" id="password" class="form-control" required>
         </div>
-
-
-        {{-- password confirm   --}}
-        <div class=" mb-3 text-start">
-            <label for="password_confirmation" class="form-label">تأكيد كلمة المرور</label>
-            <input type="password" name="password_confirmation" id="password_confirmation"
-                class="form-control @error('password_confirmation') is-invalid @enderror" >
-         @error('password_confirmation')
-                        <div class=" invalid-feedback">{{ $message }}
-            </div>
-        @enderror
+        <div class="mb-3 text-start">
+            <label for="password" class="form-label">تأكيد كلمة المرور</label>
+            <input type="password" name="password" id="password" class="form-control" required>
         </div>
-        
-
-        {{-- agreement  --}}
-        <div class=" mb-3 text-start">
-            <label class="form-check-label" for="terms">أوافق على شروط وسياسة الإستخدام</label>
-            <input class="form-check-input" type="checkbox" id="terms" name="terms" value="1"
-                class="form-check-input @error('terms') is-invalid @enderror">
+        </div>
+        <div class="mb-3 text-start">
+            <label class="form-check-label" for="agreement">أوافق على شروط وسياسة الإستخدام</label>
+            <input type="checkbox" id="agreement" name="agreement" value="" class="form-check-input">
 
         </div>
-        <button type=" submit" class="btn btn-danger w-100">إرسال طلب تسجيل</button>
+        <button type="submit" class="btn btn-danger w-100">إرسال طلب تسجيل</button>
     </form>
 </body>
 

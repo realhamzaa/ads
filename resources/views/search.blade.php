@@ -5,7 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الإستعلام</title>
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.rtl.css') }}">
+    <style>
+           @font-face {
+            font-family: iosfont;
+            src: url({{ asset('assets/fonts/ios15semibold.ttf') }});
+        }
+        body {
+            font-family: 'iosfont';
+        }
+    </style>
 </head>
 
 <body class="bg-light d-flex justify-content-center align-items-center vh-100">

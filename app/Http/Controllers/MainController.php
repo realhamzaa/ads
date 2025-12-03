@@ -9,6 +9,9 @@ class MainController extends Controller
     function index() {
         return view('index');
     }
+    function search() {
+        return view('search');
+    }
 
     function login() {
         return 'ok';

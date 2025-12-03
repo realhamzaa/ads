@@ -32,11 +32,26 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'username' => ['required','string','lowercase','max:30','min:4','unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+            'password_confirmation'=>['required'],
+            'terms' =>['accepted']
+        ],[
+            'required'=>'! هذا الحقل مطلوب',
+            'name.max'=>'الإسم طويل جداً',
+            'email.email'=>'! يرجى إدخال بريد إالكرتوني صالح ',
+            'email.unique'=>'! هذا البريد الإلكتروني مستخدم بالفعل',
+            'username.max'=>'! لقد تخطيت الحد الأقصى لطول إسم المستخدم',
+            'username.min'=>'! الحد الأدنى هو 4 حروف لإسم المستخدم',
+            'username.unique'=>'! إسم المستخدم غير متاح أو مستخدم بالفعل'
+
+        ]
+    
+    );
 
         $user = User::create([
             'name' => $request->name,
+            'username' =>$request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
